@@ -41,10 +41,10 @@ function configure_smaug_api {
     if is_service_enabled smaug-api ; then
         echo "Configuring Smaug API"
 
-        cp $SMAUG_DIR/etc/smaug.conf $SMAUG_API_CONF
-        cp $SMAUG_DIR/etc/api-paste.ini $SMAUG_CONF_DIR
-        cp $SMAUG_DIR/etc/policy.json $SMAUG_CONF_DIR
-        cp -R $SMAUG_DIR/etc/providers.d $SMAUG_CONF_DIR
+        sudo cp $SMAUG_DIR/etc/smaug.conf $SMAUG_API_CONF
+        sudo cp $SMAUG_DIR/etc/api-paste.ini $SMAUG_CONF_DIR
+        sudo cp $SMAUG_DIR/etc/policy.json $SMAUG_CONF_DIR
+        sudo cp -R $SMAUG_DIR/etc/providers.d $SMAUG_CONF_DIR
 
         iniset $SMAUG_API_CONF DEFAULT debug $ENABLE_DEBUG_LOG_LEVEL
         iniset $SMAUG_API_CONF DEFAULT verbose True
